@@ -237,19 +237,25 @@ const Header = () => {
             </Link>
           </div>
         </div>
-        <div className={toggleSearch ? "search_box active" : "search_box"}>
-          <form>
-            <input
-              type="text"
-              placeholder="Nhập từ khóa tìm kiếm..."
-              required
-            />
-            <button type="submit">
-              <img src={searchIcon} alt="" />
-            </button>
-          </form>
-          <div className="bg" onClick={() => setToggleSearch(false)}></div>
-          <div className="bg_two"></div>
+        <div
+          className={
+            toggleSearch ? "search_container active" : "search_container"
+          }
+        >
+          <div className={toggleSearch ? "search_box active" : "search_box"}>
+            <form>
+              <input
+                type="text"
+                placeholder="Nhập từ khóa tìm kiếm..."
+                required
+              />
+              <button type="submit">
+                <img src={searchIcon} alt="" />
+              </button>
+            </form>
+            <div className="bg" onClick={() => setToggleSearch(false)}></div>
+            <div className="bg_two"></div>
+          </div>
         </div>
       </div>
     </header>

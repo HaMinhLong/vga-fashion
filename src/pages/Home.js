@@ -33,6 +33,11 @@ import hotSale from "../static/images/home/hot-sale.png";
 import { ReactComponent as Time } from "../static/images/home/time.svg";
 
 const Home = () => {
+  const [date, setDate] = useState(0);
+  const [hour, setHour] = useState(0);
+  const [minute, setMinute] = useState(0);
+  const [second, setSecond] = useState(0);
+
   useEffect(() => {
     const date = moment().format("L");
     const day = date.split("/")[1];
@@ -46,9 +51,9 @@ const Home = () => {
         : date.split("/")[2];
     CountDownTimer(`${month}/${day}/${year}`, "count_down");
   }, []);
+
   const CountDownTimer = (dt, id) => {
     var end = new Date(dt);
-
     var _second = 1000;
     var _minute = _second * 60;
     var _hour = _minute * 60;
@@ -68,11 +73,10 @@ const Home = () => {
       var hours = Math.floor((distance % _day) / _hour);
       var minutes = Math.floor((distance % _hour) / _minute);
       var seconds = Math.floor((distance % _minute) / _second);
-
-      document.getElementById("date").innerHTML = days + " NGÀY ";
-      document.getElementById("hour").innerHTML = hours + " ";
-      document.getElementById("minute").innerHTML = minutes + " ";
-      document.getElementById("second").innerHTML = seconds + "";
+      setDate(days);
+      setHour(hours);
+      setMinute(minutes);
+      setSecond(seconds);
     };
 
     timer = setInterval(showRemaining, 1000);
@@ -92,10 +96,10 @@ const Home = () => {
           <div id="count_down">
             <Time />
             <p>Thời gian: </p>
-            <p id="date"></p>
-            <p id="hour"></p>
-            <p id="minute"></p>
-            <p id="second"></p>
+            <p id="date">{date} NGÀY</p>
+            <p id="hour">{hour}</p>
+            <p id="minute">{minute}</p>
+            <p id="second">{second}</p>
           </div>
           <p style={{ marginBottom: "5px" }}>
             Hàng loạt bản mẫu. Hàng loạt cải tiến. Hàng loạt thử nghiệm.

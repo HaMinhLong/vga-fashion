@@ -58,7 +58,6 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  overflow: hidden;
 }
 
 #count_down {
@@ -414,7 +413,21 @@ header .part_2 .search_cart_box .cart_header:hover {
   -ms-transform: scale(1.15);
   -o-transform: scale(1.15);
 }
-header .search_box {
+header .search_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+header .search_container .search_box {
   position: absolute;
   top: 0;
   left: 100%;
@@ -427,12 +440,12 @@ header .search_box {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
 }
-header .search_box form {
+header .search_container .search_box form {
   position: relative;
   width: 100%;
   height: 100%;
 }
-header .search_box form input {
+header .search_container .search_box form input {
   width: 100%;
   height: 100%;
   border: none;
@@ -440,7 +453,7 @@ header .search_box form input {
   outline: none;
   padding: 0px 10px;
 }
-header .search_box form button {
+header .search_container .search_box form button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -453,11 +466,11 @@ header .search_box form button {
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
 }
-header .search_box form button img {
+header .search_container .search_box form button img {
   width: 20px;
   height: 20px;
 }
-header .search_box .bg {
+header .search_container .search_box .bg {
   position: fixed;
   top: 65px;
   left: 0;
@@ -467,7 +480,7 @@ header .search_box .bg {
   cursor: pointer;
   display: none;
 }
-header .search_box .bg_two {
+header .search_container .search_box .bg_two {
   position: fixed;
   top: 0;
   left: 0;
@@ -482,13 +495,16 @@ header .search_box .bg_two {
   -o-transition: all 1s ease;
   opacity: 0;
 }
-header .search_box.active {
+header .search_container.active {
+  z-index: 1;
+}
+header .search_container.active .search_box.active {
   left: 0;
 }
-header .search_box.active .bg {
+header .search_container.active .search_box.active .bg {
   display: initial;
 }
-header .search_box.active .bg_two {
+header .search_container.active .search_box.active .bg_two {
   opacity: 1;
 }
 
