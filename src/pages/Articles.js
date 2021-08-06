@@ -13,7 +13,7 @@ const Articles = () => {
       <BreadCrumb node1={"Tin tức"} />
       <section className="articles_page container">
         <Row gutter={[32, 32]}>
-          <Col xl={16} lg={16} md={12} xs={12} className="articles_container">
+          <Col xl={16} lg={16} md={24} xs={24} className="articles_container">
             <Row gutter={[32, 32]}>
               <Col xl={24} lg={24} md={24} xs={24}>
                 <div className="article first">
@@ -36,7 +36,7 @@ const Articles = () => {
                   </div>
                 </div>
               </Col>
-              <Col xl={12} lg={12} md={24} xs={24}>
+              <Col xl={12} lg={12} md={12} xs={24}>
                 <div className="article">
                   <div className="image_box">
                     <img src={article2} alt="" />
@@ -56,7 +56,7 @@ const Articles = () => {
                   </div>
                 </div>
               </Col>
-              <Col xl={12} lg={12} md={24} xs={24}>
+              <Col xl={12} lg={12} md={12} xs={24}>
                 <div className="article">
                   <div className="image_box">
                     <img src={article3} alt="" />
@@ -86,7 +86,7 @@ const Articles = () => {
               </Col>
             </Row>
           </Col>
-          <Col xl={8} lg={8} md={12} xs={12}>
+          <Col xl={8} lg={8} md={24} xs={24}>
             <div className="part_one">
               <p className="articles_page_title">Tin tức {"&"} sự kiện</p>
               <div className="divider"></div>

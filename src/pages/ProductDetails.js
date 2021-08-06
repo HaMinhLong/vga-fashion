@@ -33,6 +33,7 @@ const ProductDetails = () => {
   const [imageScale, setImageScale] = useState(1);
   const [quantity, setQuantity] = useState(1);
   const [showSize, setShowSize] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const images = [
     product1,
@@ -75,7 +76,7 @@ const ProductDetails = () => {
         </style>
         <div className="details">
           <Row gutter={[32, 32]} className="image_box">
-            <Col xs={24} md={16}>
+            <Col xs={24} lg={14} xl={16}>
               <Row gutter={[32, 32]}>
                 {images &&
                   images.length > 0 &&
@@ -111,7 +112,7 @@ const ProductDetails = () => {
                   )}
               </Row>
             </Col>
-            <Col xs={24} md={8}>
+            <Col xs={24} lg={10} xl={8}>
               <p className="product_name">ÁO THUN T-SHIRT M-F 08</p>
               <p className="available">Còn hàng</p>
               <p className="brand">
@@ -254,19 +255,23 @@ const ProductDetails = () => {
             </div>
             <div
               className="to_left"
-              onClick={() =>
-                setIndexImage(indexImage === 0 ? indexImage : indexImage - 1)
-              }
+              onClick={() => {
+                setImageScale(indexImage === 0 ? imageScale : 1);
+                setIndexImage(indexImage === 0 ? indexImage : indexImage - 1);
+              }}
             >
               <img src={left} alt="" />
             </div>
             <div
               className="to_right"
-              onClick={() =>
+              onClick={() => {
+                setImageScale(
+                  indexImage === images.length - 1 ? imageScale : 1
+                );
                 setIndexImage(
                   indexImage === images.length - 1 ? indexImage : indexImage + 1
-                )
-              }
+                );
+              }}
             >
               <img src={right} alt="" />
             </div>
@@ -290,7 +295,9 @@ const ProductDetails = () => {
                 images.length > 0 &&
                 images.map((image, index) => (
                   <Col
-                    md={12}
+                    xs={24}
+                    md={24}
+                    lg={12}
                     key={image}
                     onClick={() => {
                       setImageScale(1);
@@ -380,7 +387,7 @@ const ProductDetails = () => {
       </section>
       <Modal
         title="HƯỚNG DẪN CHỌN SIZE"
-        width="40%"
+        width={window.innerWidth <= 1024 ? "80%" : "40%"}
         visible={showSize}
         onCancel={() => setShowSize(false)}
         footer={false}

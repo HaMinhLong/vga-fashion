@@ -22,11 +22,11 @@ const Contact = () => {
               khách hàng sản phẩm chính hãng , hơn thế nữa cung cấp chế độ đổi
               theo giúp cho quý khách yên tâm sử dụng sản phẩm.
             </p>
-            <p>Địa chỉ: 442 Đội Cấn - Ba Đình - Hà Nội</p>
-            <p>
+            <p className="info">Địa chỉ: 442 Đội Cấn - Ba Đình - Hà Nội</p>
+            <p className="info">
               Email: <span>support@sapo.vn</span>
             </p>
-            <p>
+            <p className="info">
               Số điện thoại: <span>1800 6750</span>
             </p>
           </div>

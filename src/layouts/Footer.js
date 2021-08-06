@@ -40,6 +40,8 @@ const Footer = () => {
               </li>
             </ul>
           </li>
+        </ul>
+        <ul className="footer_menu">
           <li>
             <p className="footer_title">Hỗ trợ</p>
             <ul>
@@ -57,6 +59,8 @@ const Footer = () => {
               </li>
             </ul>
           </li>
+        </ul>
+        <ul className="footer_menu">
           <li>
             <p className="footer_title">Sản phẩm</p>
             <ul>

@@ -12,12 +12,15 @@ import shirt21 from "../static/images/home/shirt-2-1.jpg";
 import shirt22 from "../static/images/home/shirt-2-2.jpg";
 import shirt31 from "../static/images/home/shirt-3-1.jpg";
 import shirt32 from "../static/images/home/shirt-3-2.jpg";
+import filter from "../static/images/product/filter.png";
+import closeFilter from "../static/images/product/filter_close.png";
 
 const Products = () => {
   const [type, setType] = useState("");
   const [price, setPrice] = useState("");
   const [brand, setBrand] = useState("");
   const [sort, setSort] = useState("");
+  const [openFilter, setOpenFilter] = useState(false);
   return (
     <>
       <BreadCrumb node1={"Sản phẩm"} />
@@ -163,20 +166,22 @@ const Products = () => {
           <div className="right_side">
             <div className="sort">
               <p className="main_title">Sắp xếp: </p>
-              <Radio.Group
-                onChange={(e) => setSort(e.target.value)}
-                value={sort}
-              >
-                <Radio value={1}>A ➞ Z</Radio>
-                <Radio value={2}>Z ➞ A</Radio>
-                <Radio value={3}>Giá tăng dần</Radio>
-                <Radio value={4}>Giá giảm dần</Radio>
-                <Radio value={5}>Hàng mới nhất</Radio>
-                <Radio value={6}>Hàng cũ nhất</Radio>
-              </Radio.Group>
+              <div className="box">
+                <Radio.Group
+                  onChange={(e) => setSort(e.target.value)}
+                  value={sort}
+                >
+                  <Radio value={1}>A ➞ Z</Radio>
+                  <Radio value={2}>Z ➞ A</Radio>
+                  <Radio value={3}>Giá tăng dần</Radio>
+                  <Radio value={4}>Giá giảm dần</Radio>
+                  <Radio value={5}>Hàng mới nhất</Radio>
+                  <Radio value={6}>Hàng cũ nhất</Radio>
+                </Radio.Group>
+              </div>
             </div>
             <Row gutter={[32, 5]} className="products">
-              <Col xs={24} md={6}>
+              <Col xs={12} md={8} lg={8} xl={6}>
                 <div className="product">
                   <Link to="/product-details" className="image_box">
                     <div className="ct">Chi tiết</div>
@@ -194,7 +199,7 @@ const Products = () => {
                   </div>
                 </div>
               </Col>
-              <Col xs={24} md={6}>
+              <Col xs={12} md={8} lg={8} xl={6}>
                 <div className="product">
                   <div className="image_box">
                     <div className="ct">Chi tiết</div>
@@ -212,7 +217,7 @@ const Products = () => {
                   </div>
                 </div>
               </Col>
-              <Col xs={24} md={6}>
+              <Col xs={12} md={8} lg={8} xl={6}>
                 <div className="product">
                   <div className="image_box">
                     <div className="ct">Chi tiết</div>
@@ -230,7 +235,7 @@ const Products = () => {
                   </div>
                 </div>
               </Col>
-              <Col xs={24} md={6}>
+              <Col xs={12} md={8} lg={8} xl={6}>
                 <div className="product">
                   <div className="image_box">
                     <div className="ct">Chi tiết</div>
@@ -248,7 +253,7 @@ const Products = () => {
                   </div>
                 </div>
               </Col>
-              <Col xs={24} md={6}>
+              <Col xs={12} md={8} lg={8} xl={6}>
                 <div className="product">
                   <div className="image_box">
                     <div className="ct">Chi tiết</div>
@@ -266,7 +271,7 @@ const Products = () => {
                   </div>
                 </div>
               </Col>
-              <Col xs={24} md={6}>
+              <Col xs={12} md={8} lg={8} xl={6}>
                 <div className="product">
                   <div className="image_box">
                     <div className="ct">Chi tiết</div>
@@ -284,7 +289,7 @@ const Products = () => {
                   </div>
                 </div>
               </Col>
-              <Col xs={24} md={6}>
+              <Col xs={12} md={8} lg={8} xl={6}>
                 <div className="product">
                   <div className="image_box">
                     <div className="ct">Chi tiết</div>
@@ -302,7 +307,7 @@ const Products = () => {
                   </div>
                 </div>
               </Col>
-              <Col xs={24} md={6}>
+              <Col xs={12} md={8} lg={8} xl={6}>
                 <div className="product">
                   <div className="image_box">
                     <div className="ct">Chi tiết</div>
@@ -320,7 +325,7 @@ const Products = () => {
                   </div>
                 </div>
               </Col>
-              <Col xs={24} md={6}>
+              <Col xs={12} md={8} lg={8} xl={6}>
                 <div className="product">
                   <div className="image_box">
                     <div className="ct">Chi tiết</div>
@@ -338,7 +343,7 @@ const Products = () => {
                   </div>
                 </div>
               </Col>
-              <Col xs={24} md={6}>
+              <Col xs={12} md={8} lg={8} xl={6}>
                 <div className="product">
                   <div className="image_box">
                     <div className="ct">Chi tiết</div>
@@ -356,7 +361,7 @@ const Products = () => {
                   </div>
                 </div>
               </Col>
-              <Col xs={24} md={6}>
+              <Col xs={12} md={8} lg={8} xl={6}>
                 <div className="product">
                   <div className="image_box">
                     <div className="ct">Chi tiết</div>
@@ -374,7 +379,7 @@ const Products = () => {
                   </div>
                 </div>
               </Col>
-              <Col xs={24} md={6}>
+              <Col xs={12} md={8} lg={8} xl={6}>
                 <div className="product">
                   <div className="image_box">
                     <div className="ct">Chi tiết</div>
@@ -402,6 +407,65 @@ const Products = () => {
                 />
               </Col>
             </Row>
+          </div>
+          <div
+            className={openFilter ? "filter_mobile active" : "filter_mobile"}
+          >
+            <img
+              src={openFilter ? closeFilter : filter}
+              alt=""
+              onClick={() => setOpenFilter(!openFilter)}
+            />
+            <div className="filter_box">
+              <div className="brand">
+                <p className="main_title">Thương hiệu</p>
+                <Radio.Group
+                  onChange={(e) => setBrand(e.target.value)}
+                  value={brand}
+                  className="filterRadio"
+                >
+                  <Space direction="vertical">
+                    <Radio value={1}>VGA Fashion</Radio>
+                  </Space>
+                </Radio.Group>
+              </div>
+
+              <div className="price">
+                <p className="main_title">Lọc giá</p>
+                <Radio.Group
+                  onChange={(e) => setPrice(e.target.value)}
+                  value={price}
+                  className="price_filter filterRadio"
+                >
+                  <Space direction="vertical">
+                    <Radio value={1}>Giá dưới 100.000đ</Radio>
+                    <Radio value={2}>100.000đ - 200.000đ</Radio>
+                    <Radio value={3}>200.000đ - 500.000đ</Radio>
+                    <Radio value={4}>500.000đ - 1.000.000đ</Radio>
+                    <Radio value={5}>1.000.000đ - 2.000.000đ</Radio>
+                    <Radio value={6}>Giá trên 2.000.000đ</Radio>
+                  </Space>
+                </Radio.Group>
+              </div>
+              <div className="type">
+                <p className="main_title">Thể loại</p>
+                <Radio.Group
+                  onChange={(e) => setType(e.target.value)}
+                  value={type}
+                  className="filterRadio"
+                >
+                  <Space direction="vertical">
+                    <Radio value={1}>Áo thun</Radio>
+                    <Radio value={2}>Quần sort</Radio>
+                    <Radio value={3}>Sơ mi</Radio>
+                  </Space>
+                </Radio.Group>
+              </div>
+            </div>
+            <div
+              className={openFilter ? "bg active" : "bg"}
+              onClick={() => setOpenFilter(false)}
+            ></div>
           </div>
         </div>
       </section>

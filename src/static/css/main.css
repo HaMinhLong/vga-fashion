@@ -24,6 +24,8 @@
 
 body {
   font-family: "Nunito Sans", sans-serif;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 p,
@@ -214,11 +216,12 @@ li {
 }
 
 .bread_crumb.container {
-  padding: 12px 15px 30px;
+  padding: 15px 15px 40px;
   margin-top: 65px;
   display: block;
   font-size: 16px;
   line-height: 24px;
+  width: 100%;
 }
 .bread_crumb.container img {
   margin: 0px 7px;
@@ -508,6 +511,31 @@ header .search_container.active .search_box.active .bg_two {
   opacity: 1;
 }
 
+.header_two {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  z-index: 10;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+}
+.header_two .box {
+  width: 25%;
+  text-align: center;
+}
+.header_two .box svg {
+  color: #2e2e2e;
+}
+.header_two .box p {
+  font-size: 12px;
+  line-height: 12px;
+  color: #2e2e2e;
+}
+
 header.active {
   background: #fff;
   box-shadow: 0 0 3px #888888;
@@ -581,6 +609,7 @@ header.active {
   font-size: 13px;
   line-height: 20px;
   color: #fff;
+  text-align: center;
 }
 .products_home .bg_home .introduce .btn {
   margin-top: 16px;
@@ -688,7 +717,6 @@ header.active {
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
-  z-index: 4;
 }
 .articles_container .article .date_box .day {
   font-size: 19px;
@@ -703,8 +731,7 @@ header.active {
   text-align: center;
   color: #fff;
 }
-.articles_container .article .date_box:after {
-  content: "";
+.articles_container .article .date_box .icon {
   position: absolute;
   width: 6px;
   height: 6px;
@@ -780,7 +807,7 @@ footer > .container .footer_logo img {
   width: 53%;
 }
 footer > .container .footer_menu {
-  width: 40%;
+  width: 15%;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -845,6 +872,9 @@ footer .footer_license .container .image_box img {
 }
 .contact_page .page_main .content p span {
   color: #006fa2;
+}
+.contact_page .page_main .content .info {
+  margin-top: 15px;
 }
 .contact_page .page_main .contact_form {
   width: 49%;
@@ -1246,6 +1276,7 @@ footer .footer_license .container .image_box img {
   font-size: 13px;
   line-height: 19px;
   padding-left: 5px;
+  font-weight: normal;
 }
 
 .products_page {
@@ -1262,6 +1293,7 @@ footer .footer_license .container .image_box img {
   padding: 0px 10px;
   width: 20%;
   margin-bottom: 20px !important;
+  cursor: pointer;
 }
 .products_page .categories_box .category p {
   text-align: center;
@@ -1320,14 +1352,21 @@ footer .footer_license .container .image_box img {
   display: flex;
   align-items: center;
   padding-bottom: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   border-bottom: 1px solid #dee2e6;
 }
 .products_page .main_section .right_side .sort .main_title {
-  margin-right: 20px;
+  width: 20%;
+}
+.products_page .main_section .right_side .sort .box {
+  width: 80%;
+  height: 100%;
 }
 .products_page .main_section .right_side .products .product {
   width: 100%;
+}
+.products_page .main_section .filter_mobile {
+  display: none;
 }
 
 .article_details_page .details .title_article_details {
@@ -1495,7 +1534,7 @@ footer .footer_license .container .image_box img {
   margin-top: 10px;
 }
 .product_details .details .image_box .price {
-  margin-top: 10px;
+  margin-top: 5px;
   font-size: 24px;
   line-height: 36px;
   color: #d93b48;
@@ -1559,6 +1598,7 @@ footer .footer_license .container .image_box img {
   opacity: 1;
 }
 .product_details .details .image_box .show_size {
+  cursor: pointer;
   padding-bottom: 20px;
 }
 .product_details .show_all {
@@ -1575,7 +1615,7 @@ footer .footer_license .container .image_box img {
 .product_details .show_all .image_slider {
   position: relative;
   width: 88%;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(5px);
 }
 .product_details .show_all .image_slider .icon_group {
@@ -1818,6 +1858,11 @@ footer .footer_license .container .image_box img {
   margin-bottom: 15px;
   background: #006fa2;
   padding: 16px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
 }
 .cart_page .right_side .total p {
   font-weight: bold;

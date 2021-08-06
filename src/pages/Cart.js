@@ -29,7 +29,7 @@ const Cart = () => {
       <BreadCrumb node1={"Giỏ hàng"} />
       <section className="cart_page container">
         <Row gutter={[32, 32]}>
-          <Col xs={24} md={16} className="left_side">
+          <Col xs={24} md={14} lg={16} className="left_side">
             <div className="cart_item">
               <div className="image_box">
                 <img src={somi1} alt="" />
@@ -127,7 +127,7 @@ const Cart = () => {
               </div>
             </div>
           </Col>
-          <Col xs={24} md={8} className="right_side">
+          <Col xs={24} md={10} lg={8} className="right_side">
             <div className="total">
               <p>TỔNG</p>
               <p>1.245.000 ₫</p>

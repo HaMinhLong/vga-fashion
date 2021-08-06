@@ -12,6 +12,7 @@ const ArticleDetails = () => {
     <>
       <BreadCrumb
         node1={"Tin tức"}
+        type2
         urlNode1={"/articles"}
         node2={
           "Thời trang phim Vincenzo: Bản giao hưởng phong cách của Ý và Hàn"
@@ -19,7 +20,7 @@ const ArticleDetails = () => {
       />
       <section className="article_details_page container">
         <Row gutter={[48, 32]}>
-          <Col xl={16} lg={16} md={12} xs={12} className="details">
+          <Col xl={16} lg={16} md={24} xs={24} className="details">
             <p className="title_article_details">
               Thời trang phim Vincenzo: Bản giao hưởng phong cách của Ý và Hàn
             </p>
@@ -68,7 +69,7 @@ const ArticleDetails = () => {
               </ul>
             </div>
           </Col>
-          <Col xl={8} lg={8} md={12} xs={12}>
+          <Col xl={8} lg={8} md={24} xs={24}>
             <div className="part_one">
               <p className="articles_page_title">Tin tức {"&"} sự kiện</p>
               <div className="divider"></div>

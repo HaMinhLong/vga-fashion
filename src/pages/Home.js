@@ -87,7 +87,7 @@ const Home = () => {
         <img src={bannerHome} alt="" />
       </section>
       <section className="products_home">
-        <div className="products_list">
+        <div className="products_list sale">
           <div className="header_box">
             <div className="title_box">
               <p className="main_title">flash sale</p>
@@ -95,13 +95,13 @@ const Home = () => {
           </div>
           <div id="count_down">
             <Time />
-            <p>Thời gian: </p>
+            <p id="text_time">Thời gian: </p>
             <p id="date">{date} NGÀY</p>
             <p id="hour">{hour}</p>
             <p id="minute">{minute}</p>
             <p id="second">{second}</p>
           </div>
-          <p style={{ marginBottom: "5px" }}>
+          <p style={{ marginBottom: "5px", textAlign: "center" }}>
             Hàng loạt bản mẫu. Hàng loạt cải tiến. Hàng loạt thử nghiệm.
           </p>
           <div className="list">
@@ -168,7 +168,7 @@ const Home = () => {
           <Link to="/">Xem thêm</Link>
         </div>
         <div
-          className="bg_home"
+          className="bg_home sale"
           style={{ backgroundImage: `url(${bgProductOne})` }}
         >
           <div className="introduce">
@@ -406,6 +406,7 @@ const Home = () => {
             <div className="date_box">
               <div className="day">05</div>
               <div className="year">05/2021</div>
+              <div className="icon"></div>
             </div>
 
             <div className="content">
@@ -427,6 +428,7 @@ const Home = () => {
             <div className="date_box">
               <div className="day">05</div>
               <div className="year">05/2021</div>
+              <div className="icon"></div>
             </div>
             <div className="content">
               <Link to="/" className="article_title">
@@ -447,6 +449,7 @@ const Home = () => {
             <div className="date_box">
               <div className="day">05</div>
               <div className="year">05/2021</div>
+              <div className="icon"></div>
             </div>
             <div className="content">
               <Link to="/" className="article_title">
@@ -467,6 +470,7 @@ const Home = () => {
             <div className="date_box">
               <div className="day">05</div>
               <div className="year">05/2021</div>
+              <div className="icon"></div>
             </div>
             <div className="content">
               <Link to="/" className="article_title">
